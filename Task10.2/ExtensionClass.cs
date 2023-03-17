@@ -9,15 +9,17 @@ namespace Task10._2
 {
     public static class ExtensionClass
     {
-        public static T[] GetArray<T>(this MyList<T> list)
+        
+        public static IEnumerable<int> GetArray(this IEnumerable list)
         {
-            T[] myList = new T[list.NumberOfElements];
-            for (int i = 0; i < myList.Length; i++)
+            List<int> list1 = new List<int>();
+
+            foreach (var item in list)
             {
-                myList[i] = list[i];
+                list1.Add((int)item);
             }
 
-            return myList;
+            return list1;
         }
     }
 }
