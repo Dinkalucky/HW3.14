@@ -12,14 +12,12 @@ namespace Task10._2
         
         public static IEnumerable<int> GetArray(this IEnumerable list)
         {
-            List<int> list1 = new List<int>();
 
             foreach (var item in list)
             {
-                list1.Add((int)item);
+                yield return (int)item;
             }
-
-            return list1;
+            
         }
     }
 }
